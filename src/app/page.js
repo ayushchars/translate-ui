@@ -9,11 +9,11 @@ function Page() {
       title: "Communiq",
       description:
         "Communiq is a powerful language translation tool that enables users to effortlessly translate keywords into any language across the globe. Whether you need to communicate across cultures, understand foreign text, or expand your reach internationally, Communiq ensures seamless and accurate translations in an instant.",
-      image: "/assets/one.jpeg",
+      image: "/assets/Logo.jpeg",
     },
     {
       id: 2,
-      title: "Translate word",
+      title: "Translate Word",
       description:
         "Translate Word is a key feature of Communiq that allows users to effortlessly translate individual words into any language. Whether you're learning a new language, enhancing communication, or simply looking for the perfect translation, this feature provides accurate and instant word translations to help bridge language barriers seamlessly.",
       image: "/assets/two.jpeg",
@@ -27,7 +27,7 @@ function Page() {
     },
     {
       id: 4,
-      title: "Email Assistence",
+      title: "Email Assistance",
       description:
         "Email Assistant is a powerful feature of Communiq that helps users compose professional emails in English and seamlessly translate them into any language. Whether you're communicating with international clients, colleagues, or friends, this feature ensures that your messages are clear, accurate, and culturally appropriate. With just a few clicks, you can draft, translate, and send emails with confidence, breaking language barriers effortlessly.",
       image: "/assets/four.jpeg",
@@ -50,67 +50,96 @@ function Page() {
 
   return (
     <>
-      <div className="h-screen flex flex-col-reverse md:flex-row items-center justify-center px-6 md:px-16 bg-gradient-to-r from-black via-gray-900 to-purple-900 text-white text-center md:text-left">
-        <div className="mt-10 md:mt-0 md:w-1/2 flex justify-center">
-          <Image
-            src="/assets/Logo.jpeg"
-            alt="Communiq Logo"
-            width={250}
-            height={250}
-            priority
-            className="drop-shadow-lg w-[200px] h-[200px] sm:w-[250px] sm:h-[250px]"
-          />
+      <div className="min-h-screen flex flex-col-reverse md:flex-row items-center justify-center px-6 md:px-16 bg-gradient-to-br from-black via-gray-900 to-purple-900 text-white text-center md:text-left relative overflow-hidden">
+
+        <div className="absolute inset-0 opacity-20">
+          <div className="absolute w-96 h-96 bg-purple-500/20 rounded-full blur-3xl -top-48 -left-48 animate-pulse"></div>
+          <div className="absolute w-96 h-96 bg-blue-500/20 rounded-full blur-3xl -bottom-48 -right-48 animate-pulse delay-1000"></div>
         </div>
 
-        <div className="w-full md:w-1/2 space-y-6 max-w-lg mx-auto">
-          <h1 className="text-4xl sm:text-5xl font-bold tracking-wide text-purple-400 drop-shadow-md">
-            Welcome to <span className="text-blue-400">Communiq</span>
+        <div className="mt-10 md:mt-0 md:w-1/2 flex justify-center relative z-10">
+          <div className="relative group">
+            <div className="absolute -inset-2 bg-gradient-to-r from-purple-600 to-blue-500 rounded-full blur opacity-30 group-hover:opacity-50 transition duration-1000"></div>
+            <Image
+              src="/assets/Logo.jpeg"
+              alt="Communiq Logo"
+              width={300}
+              height={300}
+              priority
+              className="drop-shadow-2xl transform transition duration-500 hover:scale-105"
+            />
+          </div>
+        </div>
+
+        <div className="w-full md:w-1/2 space-y-6 max-w-lg mx-auto relative z-10">
+          <h1 className="text-4xl sm:text-6xl font-bold bg-gradient-to-r from-purple-400 to-blue-400 bg-clip-text text-transparent drop-shadow-md">
+            Welcome to <br className="hidden md:block" />
+            <span className="text-blue-400">Communiq</span>
           </h1>
-          <p className="text-base sm:text-lg text-gray-300 leading-relaxed">
-            Download the Communiq app and stay connected like never before.
+          <p className="text-lg sm:text-xl text-gray-300 leading-relaxed font-light">
+            Revolutionizing communication with AI-powered language solutions
           </p>
           <a
             href="/download"
-            className="inline-block bg-purple-500 text-white px-6 py-3 rounded-full font-semibold shadow-lg hover:bg-purple-400 transition-all duration-300 ring-2 ring-purple-300 hover:ring-purple-500"
+            className="inline-block bg-gradient-to-r from-purple-500 to-blue-500 text-white px-8 py-4 rounded-full font-semibold shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:scale-105 hover:from-purple-600 hover:to-blue-600"
           >
-            Download Now
+            <span className="drop-shadow-md">Get Started</span>
+            <span className="ml-3">→</span>
           </a>
         </div>
       </div>
 
-      <div className="min-h-screen flex flex-col items-center justify-center px-6 md:px-16 bg-gradient-to-r from-black via-gray-900 to-purple-900 text-white text-center">
-        <h1 className="text-4xl sm:text-5xl font-bold tracking-wide text-purple-400 drop-shadow-md mt-10">
-          How <span className="text-blue-400">Communiq</span> Works
-        </h1>
-        <p className="text-base sm:text-lg text-gray-300 leading-relaxed max-w-2xl mt-4">
-          Explore the key features of Communiq and see how it enhances your communication experience.
-        </p>
+      <div className="min-h-screen flex flex-col items-center justify-center px-6 md:px-16 bg-gradient-to-br from-black via-gray-900 to-purple-900 text-white relative">
+        <div className="max-w-7xl w-full">
+          <div className="text-center mb-16">
+            <h1 className="text-4xl sm:text-6xl font-bold bg-gradient-to-r from-purple-400 to-blue-400 bg-clip-text text-transparent drop-shadow-md mb-6">
+              AI-Powered Features
+            </h1>
+            <p className="text-xl text-gray-300 max-w-3xl mx-auto font-light">
+              Discover the future of communication with our intelligent features
+            </p>
+          </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 mt-10 max-w-5xl">
-          {features.map((feature) => (
-            <div
-              key={feature.id}
-              className="group bg-gray-800 rounded-lg p-6 shadow-lg cursor-pointer transition-all duration-300 overflow-hidden flex flex-col items-center justify-center h-[450px] relative"
-            >
-              <div className="w-full flex justify-center items-center h-[400px]">
-                <Image
-                  src={feature.image}
-                  alt={feature.title}
-                  width={225}
-                  height={400}
-                  className="rounded-lg aspect-[9/16] object-contain"
-                />
-              </div>
-              <p className="mt-3 text-lg font-semibold text-gray-300">{feature.title}</p>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+            {features.map((feature) => (
+              <div
+                key={feature.id}
+                className="group relative bg-gray-800/50 backdrop-blur-sm rounded-2xl p-6 shadow-2xl hover:shadow-purple-500/20 transition-all duration-300 transform hover:-translate-y-2 border border-gray-700 hover:border-purple-500"
+              >
+               
+                <div className="relative h-60 w-full rounded-xl overflow-hidden bg-gray-900/50">
+                  <Image
+                    src={feature.image}
+                    alt={feature.title}
+                    width={600}
+                    height={400}
+                    className="object-contain p-4 transform transition duration-500 group-hover:scale-105"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-b from-black/30 to-transparent" />
+                </div>
+                
+               
+                <div className="mt-6 px-2 pb-2">
+                  <h3 className="text-2xl font-bold text-purple-400 mb-3 flex items-center">
+                    {feature.title}
+                    <span className="ml-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">✦</span>
+                  </h3>
+                  <p className="text-gray-300 leading-relaxed font-light line-clamp-3 group-hover:line-clamp-none transition-all">
+                    {feature.description}
+                  </p>
+                </div>
 
-              <div className="absolute inset-0 bg-gray-800 bg-opacity-80 flex flex-col justify-center items-center text-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                <h2 className="text-2xl font-bold text-purple-400">{feature.title}</h2>
-                <p className="mt-3 text-gray-300 text-base">{feature.description}</p>
+                {/* AI Badge */}
+                {/* <div className="absolute top-4 right-4 bg-purple-500/20 px-3 py-1 rounded-full text-sm text-purple-300">
+                  AI-Powered
+                </div> */}
               </div>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
       </div>
+
+      {/* </div> */}
     </>
   );
 }
