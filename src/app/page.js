@@ -80,10 +80,11 @@ function Page() {
             Revolutionizing communication with AI-powered language solutions
           </p>
           <a
-            href="/download"
+            href="https://drive.google.com/uc?export=download&confirm=yes&id=1FB12aW3bub7hrHhsc6q0rgf6rXYcJdWb
+"
             className="inline-block bg-gradient-to-r from-purple-500 to-blue-500 text-white px-8 py-4 rounded-full font-semibold shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:scale-105 hover:from-purple-600 hover:to-blue-600"
           >
-            <span className="drop-shadow-md">Get Started</span>
+            <span className="drop-shadow-md">Download Communiq</span>
             <span className="ml-3">→</span>
           </a>
         </div>
