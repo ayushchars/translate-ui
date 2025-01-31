@@ -1,4 +1,5 @@
 "use client"
+import axios from "axios";
 import React, { useState, useEffect } from "react";
 
 function Index() {
@@ -9,9 +10,31 @@ function Index() {
     setCurrentUrl(window.location.href);
   }, []);
 
-  const handleSubmit = () => {
-    alert(`Submitted: ${inputValue}`);
+  const handleSubmit =  async() => {
+    
+      try{
+        const res = await axios.post(`https://communiq-translate.vercel.app/api/url`,{ "name" : inputValue})
+        console.log(res)
+        fetchData()
+      }catch(err){
+        console.log(err)
+      }
   };
+
+
+  const fetchData = async()=>{
+    try{
+      const res = await axios.get(`https://communiq-translate.vercel.app/api/get-url`)
+      setCurrentUrl(res?.data?.data?.name)
+    }catch(err){
+      console.log(err)
+    }
+  }
+
+  useEffect(()=>{
+    fetchData()
+  },[])
+
 
   return (
     <div className="flex flex-col items-center justify-center min-h-screen p-4 bg-gray-100">
