@@ -1,52 +1,50 @@
 "use client";
-import React, { useState } from "react";
+import React from "react";
 import Image from "next/image";
 
 function Page() {
-  const [selectedFeature, setSelectedFeature] = useState(null);
-
   const features = [
     {
       id: 1,
-      title: "Seamless Messaging",
+      title: "Communiq",
       description:
-        "Communiq allows you to send messages instantly with end-to-end encryption, ensuring your conversations remain private and secure.",
-      image: "/assets/Logo.jpeg",
+        "Communiq is a powerful language translation tool that enables users to effortlessly translate keywords into any language across the globe. Whether you need to communicate across cultures, understand foreign text, or expand your reach internationally, Communiq ensures seamless and accurate translations in an instant.",
+      image: "/assets/one.jpeg",
     },
     {
       id: 2,
-      title: "Group Chats",
+      title: "Translate word",
       description:
-        "Stay connected with family, friends, and colleagues through group chats that make collaboration easy and fun.",
-        image: "/assets/Logo.jpeg",
+        "Translate Word is a key feature of Communiq that allows users to effortlessly translate individual words into any language. Whether you're learning a new language, enhancing communication, or simply looking for the perfect translation, this feature provides accurate and instant word translations to help bridge language barriers seamlessly.",
+      image: "/assets/two.jpeg",
     },
     {
       id: 3,
-      title: "Secure Calls",
+      title: "History",
       description:
-        "Experience high-quality voice and video calls with top-notch security, so you never have to worry about eavesdroppers.",
-        image: "/assets/Logo.jpeg",
+        "History is a valuable feature of Communiq that keeps track of all your past translations, allowing you to easily revisit and review previously translated keywords and words. Whether you need to reference past searches, save important translations for later, or maintain a record of your language learning journey, the History feature ensures quick access to your translation history whenever you need it.",
+      image: "/assets/three.jpeg",
     },
     {
       id: 4,
-      title: "Media Sharing",
+      title: "Email Assistence",
       description:
-        "Share photos, videos, and documents seamlessly without compromising on quality or speed.",
-        image: "/assets/Logo.jpeg",
+        "Email Assistant is a powerful feature of Communiq that helps users compose professional emails in English and seamlessly translate them into any language. Whether you're communicating with international clients, colleagues, or friends, this feature ensures that your messages are clear, accurate, and culturally appropriate. With just a few clicks, you can draft, translate, and send emails with confidence, breaking language barriers effortlessly.",
+      image: "/assets/four.jpeg",
     },
     {
       id: 5,
-      title: "Custom Profiles",
+      title: "WordFlip",
       description:
-        "Personalize your profile with unique avatars, statuses, and themes to express yourself.",
-        image: "/assets/Logo.jpeg",
+        "WordFlip is an intuitive feature of Communiq designed to help users understand the different components of a word, such as its verb, object, tense, or part of speech. Whether you're exploring grammar, learning a new language, or analyzing sentence structure, WordFlip allows you to break down words and discover their various forms and uses. This feature provides deeper insights into language, helping users master not just vocabulary, but the rules and nuances of sentence construction as well.",
+      image: "/assets/five.jpeg",
     },
     {
       id: 6,
-      title: "Custom Profiles",
+      title: "Chat With Communiq",
       description:
-        "Personalize your profile with unique avatars, statuses, and themes to express yourself.",
-        image: "/assets/Logo.jpeg",
+        "Chat With Communiq is an interactive feature that enables users to engage in real-time conversations with Communiq’s AI-powered assistant. Whether you need help with translations, grammar, language learning, or simply have a question, this feature offers an easy and conversational way to access language support. Chat With Communiq is designed to provide personalized assistance, offering instant answers and solutions to make your language experience smoother and more efficient.",
+      image: "/assets/six.jpeg",
     },
   ];
 
@@ -80,7 +78,6 @@ function Page() {
         </div>
       </div>
 
-      {/* How It Works Section */}
       <div className="min-h-screen flex flex-col items-center justify-center px-6 md:px-16 bg-gradient-to-r from-black via-gray-900 to-purple-900 text-white text-center">
         <h1 className="text-4xl sm:text-5xl font-bold tracking-wide text-purple-400 drop-shadow-md mt-10">
           How <span className="text-blue-400">Communiq</span> Works
@@ -89,41 +86,27 @@ function Page() {
           Explore the key features of Communiq and see how it enhances your communication experience.
         </p>
 
-        {/* Features Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 mt-10 max-w-5xl">
           {features.map((feature) => (
             <div
               key={feature.id}
-              className={`bg-gray-800 rounded-lg p-4 shadow-lg cursor-pointer transition-all duration-300 ${
-                selectedFeature === feature.id ? "h-[300px]" : "h-[250px]"
-              }`}
-              onClick={() =>
-                setSelectedFeature(selectedFeature === feature.id ? null : feature.id)
-              }
+              className="group bg-gray-800 rounded-lg p-6 shadow-lg cursor-pointer transition-all duration-300 overflow-hidden flex flex-col items-center justify-center h-[450px] relative"
             >
-              {selectedFeature === feature.id ? (
-                <div className="flex flex-col justify-center items-center h-full p-4">
-                  <h2 className="text-xl font-bold text-purple-400">{feature.title}</h2>
-                  <p className="mt-2 text-gray-300 text-sm">{feature.description}</p>
-                  <button
-                    className="mt-4 px-3 py-1 bg-purple-500 text-white rounded-lg shadow-md hover:bg-purple-400 transition-all duration-300"
-                    onClick={() => setSelectedFeature(null)}
-                  >
-                    Close
-                  </button>
-                </div>
-              ) : (
-                <>
-                  <Image
-                    src={feature.image}
-                    alt={feature.title}
-                    width={300}
-                    height={200}
-                    className="rounded-lg"
-                  />
-                  <p className="mt-2 text-gray-300 font-semibold">{feature.title}</p>
-                </>
-              )}
+              <div className="w-full flex justify-center items-center h-[400px]">
+                <Image
+                  src={feature.image}
+                  alt={feature.title}
+                  width={225}
+                  height={400}
+                  className="rounded-lg aspect-[9/16] object-contain"
+                />
+              </div>
+              <p className="mt-3 text-lg font-semibold text-gray-300">{feature.title}</p>
+
+              <div className="absolute inset-0 bg-gray-800 bg-opacity-80 flex flex-col justify-center items-center text-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                <h2 className="text-2xl font-bold text-purple-400">{feature.title}</h2>
+                <p className="mt-3 text-gray-300 text-base">{feature.description}</p>
+              </div>
             </div>
           ))}
         </div>
