@@ -3,7 +3,7 @@ import Image from "next/image";
 
 function HomePage() {
   return (
-    <div className="min-h-screen flex flex-col-reverse md:flex-row items-center justify-center px-6 md:px-16 bg-gradient-to-br from-black via-gray-900 to-purple-900 text-white text-center md:text-left relative overflow-hidden mb-16">
+    <div className="min-h-screen flex flex-col-reverse md:flex-row items-center justify-center px-6 md:px-16 bg-gradient-to-br from-black via-gray-900 to-purple-900 text-white text-center md:text-left relative overflow-hidden">
 
         <div className="absolute inset-0 opacity-20">
           <div className="absolute w-96 h-96 bg-purple-500/20 rounded-full blur-3xl -top-48 -left-48 animate-pulse"></div>
